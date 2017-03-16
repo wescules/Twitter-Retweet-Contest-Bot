@@ -5,7 +5,7 @@ import tweepy
 
 from auth import consumer_key, consumer_secret, access_token, access_token_secret
 
-string_to_search = 'RT retweet to win'
+string_to_search: ['RT retweet to win', 'RT to win', 'retweet 2 win', 'RT 2 win', 'donate']
 
 consumer_key = '***********************'
 consumer_secret = '***********************'
