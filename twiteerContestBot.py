@@ -5,7 +5,7 @@ import tweepy
 
 from auth import consumer_key, consumer_secret, access_token, access_token_secret
 
-string_to_search: ['RT retweet to win', 'RT to win', 'retweet 2 win', 'RT 2 win', 'donate']
+string_to_search = ['RT retweet to win', 'RT to win', 'retweet 2 win', 'RT 2 win', 'donate']
 
 consumer_key = '***********************'
 consumer_secret = '***********************'
@@ -23,9 +23,11 @@ following_count = 0
 past_tweet_ids = []
 
 blacklisted_users = [3044534229]
-
+index = 0
 while True:
-    tweets = api.search(string_to_search)
+
+    tweets = api.search(string_to_search[index])
+    index += 1
     tweet_id_dict = {tweet.id : tweet for tweet in tweets if tweet.id not in past_tweet_ids}
     for tweet_id in tweet_id_dict.keys():
         try:
